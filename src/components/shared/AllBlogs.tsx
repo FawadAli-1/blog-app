@@ -57,6 +57,7 @@ const AllBlogs = async () => {
                 {event.categories.map((category: any) => {
                   return (
                     <Badge
+                    key={event._id}
                       className={`${
                         category.title === "Education"
                           ? "bg-green-700"
