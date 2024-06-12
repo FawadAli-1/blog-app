@@ -16,7 +16,7 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col-reverse sm:flex-row my-8">
       <div className="w-full sm:w-1/2 flex flex-col items-center justify-center gap-20 ">
-        <h1 className="text-5xl font-bold uppercase text-slate-900 dark:text-slate-100">
+        <h1 className="text-5xl text-center font-bold uppercase text-slate-900 dark:text-slate-100">
           Become <span className="text-primary">Better...</span>
         </h1>
         <p className="text-center w-3/4 text-slate-900 dark:text-slate-100">

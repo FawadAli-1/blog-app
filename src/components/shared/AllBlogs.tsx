@@ -32,7 +32,7 @@ const AllBlogs = async () => {
           All Blog Posts
         </h2>
       </div>
-      <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start">
+      <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start sm:justify-between">
         {events.map((event) => (
           <div key={event._id}>
           <Card

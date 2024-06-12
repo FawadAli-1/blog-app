@@ -34,7 +34,7 @@ const FeaturedBlogs = async () => {
           Featured Blogs
         </h2>
       </div>
-      <div className="flex sm:flex-wrap gap-4 sm:gap-8">
+      <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start sm:justify-between">
         {events.map((event) => (
           event.featured ? (
             <Card
