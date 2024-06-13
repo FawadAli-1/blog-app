@@ -15,7 +15,7 @@ const HeroSection = () => {
 
   return (
     <div className="flex flex-col-reverse sm:flex-row my-8">
-      <div className="w-full sm:w-1/2 flex flex-col items-center justify-center gap-20 ">
+      <div className="w-full sm:w-1/2 flex flex-col items-center justify-center gap-16 mt-4">
         <h1 className="text-5xl text-center font-bold uppercase text-slate-900 dark:text-slate-100">
           Become <span className="text-primary">Better...</span>
         </h1>
@@ -37,7 +37,7 @@ const HeroSection = () => {
         </p>
         <Button onClick={scrollToBlogs} className="text-slate-100">
           See All Blogs{" "}
-          <CircleChevronDown className="size-5 fill-slate-100 stroke-slate-900 ml-1" />
+          <CircleChevronDown className="size-5 fill-none stroke-slate-50 ml-1" />
         </Button>
       </div>
       <div className="w-full mb-4 sm:w-1/2 md:w-full flex items-center justify-center">

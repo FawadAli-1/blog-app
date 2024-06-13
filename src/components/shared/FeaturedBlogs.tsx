@@ -22,7 +22,6 @@ const EVENTS_QUERY = `*[_type == "blogpost"]{
   }
 }`;
 
-
 const FeaturedBlogs = async () => {
   const events = await sanityFetch<SanityDocument[]>({ query: EVENTS_QUERY });
   console.log(events);
@@ -34,52 +33,61 @@ const FeaturedBlogs = async () => {
           Featured Blogs
         </h2>
       </div>
-      <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start sm:justify-between">
-        {events.map((event) => (
+      <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start">
+        {events.map((event) =>
           event.featured ? (
-            <Card
-            key={event._id}
-            className="text-slate-900 dark:text-slate-100 sm:flex sm:flex-col sm:justify-between w-full transform transition-transform duration-200 ease-in-out hover:scale-105 hover:cursor-pointer shadow-lg hover:shadow-xl dark:bg-slate-900 bg-slate-50 sm:w-1/4"
-          >
-            <CardHeader>
-              <CardTitle className="mb-2">{event.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Image
-                src={event.image}
-                alt="image"
-                width={300}
-                height={300}
-                className="mb-4"
-              />
-              <p className="line-clamp-3">{event.description}</p>
-            </CardContent>
-            <CardFooter className="flex flex-col items-start gap-8">
-              <div className="flex gap-2 flex-wrap">
-                {event.categories.map((category: any) => {
-                  return (
-                    <Badge
-                    key={event._id}
-                      className={`${
-                        category.title === "Education"
-                          ? "bg-green-700"
-                          : category.title === "Entertainment"
-                            ? "bg-yellow-500"
-                          : category.title === "Comedy"
-                            ? "bg-red-500"
-                            : ""
-                      } text-slate-50`}
-                    >
-                      {category.title}
-                    </Badge>
-                  );
-                })}
-              </div>
-              <Link href={`/blog/${event.slug.current}`} className={`${cn(buttonVariants())} rounded-3xl text-slate-100 `}>Read More<ExternalLink  className="size-5 ml-1 stroke-slate-100"/></Link>
-            </CardFooter>
-          </Card>
-          ) : ""
-        ))}
+            <div key={event._id} className="text-slate-900 dark:text-slate-100 sm:flex sm:justify-between w-full sm:w-1/4 transform transition-transform duration-200 ease-in-out hover:scale-105 hover:cursor-pointer shadow-lg hover:shadow-xl dark:bg-slate-900 bg-slate-50">
+              <Card
+                key={event._id}
+                className="sm:flex sm:justify-between sm:flex-col">
+                <CardHeader>
+                  <CardTitle className="mb-2">{event.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Image
+                    src={event.image}
+                    alt="image"
+                    width={800}
+                    height={800}
+                    className="mb-4"
+                  />
+                  <p className="line-clamp-3">{event.description}</p>
+                </CardContent>
+                <CardFooter className="flex flex-col items-start gap-8">
+                  <div className="flex gap-2 flex-wrap">
+                    {event.categories.map((category: any) => {
+                      return (
+                        <Badge
+                          key={event._id}
+                          className={`${
+                            category.title === "Education"
+                              ? "bg-green-700"
+                              : category.title === "Entertainment"
+                                ? "bg-yellow-500"
+                                : category.title === "Comedy"
+                                  ? "bg-red-500"
+                                  : ""
+                          } text-slate-50`}
+                        >
+                          {category.title}
+                        </Badge>
+                      );
+                    })}
+                  </div>
+                  <Link
+                    href={`/blog/${event.slug.current}`}
+                    className={`${cn(buttonVariants())} rounded-3xl text-slate-100 `}
+                  >
+                    Read More
+                    <ExternalLink className="size-5 ml-1 stroke-slate-100" />
+                  </Link>
+                </CardFooter>
+              </Card>
+            </div>
+          ) : (
+            ""
+          )
+        )}
       </div>
     </section>
   );

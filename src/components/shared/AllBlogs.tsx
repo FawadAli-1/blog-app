@@ -34,11 +34,8 @@ const AllBlogs = async () => {
       </div>
       <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start sm:justify-between">
         {events.map((event) => (
-          <div key={event._id}>
-          <Card
-            key={event._id}
-            className="text-slate-900 dark:text-slate-100 sm:flex sm:flex-col sm:justify-between w-full transform transition-transform duration-200 ease-in-out hover:scale-105 hover:cursor-pointer shadow-lg hover:shadow-xl dark:bg-slate-900 bg-slate-50 sm:w-1/4"
-          >
+          <div key={event._id} className="text-slate-900 dark:text-slate-100 sm:flex sm:justify-between w-full sm:w-1/4 transform transition-transform duration-200 ease-in-out hover:scale-105 hover:cursor-pointer shadow-lg hover:shadow-xl dark:bg-slate-900 bg-slate-50">
+          <Card className="sm:flex sm:justify-between sm:flex-col">
             <CardHeader>
               <CardTitle className="mb-2">{event.title}</CardTitle>
             </CardHeader>
@@ -46,8 +43,8 @@ const AllBlogs = async () => {
               <Image
                 src={event.image}
                 alt="image"
-                width={300}
-                height={300}
+                width={800}
+                height={800}
                 className="mb-4"
               />
               <p className="line-clamp-3">{event.description}</p>
