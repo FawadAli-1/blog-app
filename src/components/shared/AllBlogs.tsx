@@ -32,9 +32,9 @@ const AllBlogs = async () => {
           All Blog Posts
         </h2>
       </div>
-      <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start sm:justify-between">
+      <div className="flex flex-wrap gap-x-16 gap-y-8 justify-start sm:justify-between md:justify-normal lg:justify-normal">
         {events.map((event) => (
-          <div key={event._id} className="text-slate-900 dark:text-slate-100 sm:flex sm:justify-between w-full sm:w-1/4 transform transition-transform duration-200 ease-in-out hover:scale-105 hover:cursor-pointer shadow-lg hover:shadow-xl dark:bg-slate-900 bg-slate-50">
+          <div key={event._id} className="text-slate-900 dark:text-slate-100 sm:flex sm:justify-between w-full sm:w-1/4 md:w-full lg:w-1/4 transform transition-transform duration-200 ease-in-out hover:scale-105 hover:cursor-pointer shadow-lg hover:shadow-xl dark:bg-slate-900 bg-slate-50">
           <Card className="sm:flex sm:justify-between sm:flex-col">
             <CardHeader>
               <CardTitle className="mb-2">{event.title}</CardTitle>
