@@ -76,10 +76,12 @@ const Navbar = () => {
             <SheetTrigger>
               <Menu />
             </SheetTrigger>
-            <SheetContent className="flex">
+            <SheetContent className="flex justify-center">
               <SheetHeader>
-                <SheetTitle className="flex mb-8">Menu</SheetTitle>
-                <SheetDescription className="flex flex-col items-start gap-4">
+                <SheetTitle className="flex mb-8">
+                  <span className="text-primary">Fawad&nbsp;</span> Ali
+                </SheetTitle>
+                <SheetDescription className="flex flex-col items-center gap-y-8">
                   {navigationPaths.map((navPath) => (
                     <Link key={navPath.index} href={navPath.route}>
                       {navPath.pathname}
