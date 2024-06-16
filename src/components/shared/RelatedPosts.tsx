@@ -41,7 +41,7 @@ const RelatedPosts = ({
         <span className="text-primary">Related</span> Posts
       </h2>
       {relatedPosts.map((post) => (
-        <div key={post._id} className="w-full my-4">
+        <div key={post._id} className="w-full my-4 transform transition-transform duration-200 ease-in-out hover:scale-105 hover:cursor-pointer shadow-lg hover:shadow-xl dark:bg-slate-900 bg-slate-50">
           <Card key={post._id}>
             <CardHeader>
               <div className="flex flex-col gap-4">
@@ -51,7 +51,7 @@ const RelatedPosts = ({
             </CardHeader>
             <CardContent>
               <Image src={post.image} alt="image" width={200} height={200} />
-              <p className="text-slate-50 my-4">
+              <p className="dark:text-slate-50 text-slate-900 my-4">
                 <span className="font-bold text-primary">Published:</span>{" "}
                 &nbsp;
                 {new Date(post.publishedAt).toLocaleDateString("en-US", {
