@@ -24,6 +24,8 @@ const EVENTS_QUERY = `*[_type == "blogpost"]{
 
 const AllBlogs = async () => {
   const events = await sanityFetch<SanityDocument[]>({ query: EVENTS_QUERY });
+  console.log(events);
+  
 
   return (
     <section id="all-blogs">
