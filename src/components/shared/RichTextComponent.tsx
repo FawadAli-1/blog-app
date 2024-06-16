@@ -12,12 +12,13 @@ export const RichTextComponents = {
       const imageUrl = (await urlFor(value.asset)).url(); // Generate the URL
 
       return (
-        <div className="relative w-full h-60">
+        <div className="">
           <Image
-            className="object-contain"
+          className="mx-auto"
             src={imageUrl}
             alt="Inline Image"
-            fill
+            width={800}
+            height={800}
           />
         </div>
       );
