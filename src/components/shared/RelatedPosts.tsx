@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { ExternalLink } from "lucide-react";
 import { Badge } from "../ui/badge";
+import { Category } from "@/types";
 
 const RelatedPosts = ({
   relatedPosts,
@@ -26,7 +27,7 @@ const RelatedPosts = ({
       current: string;
     };
     publishedAt: string;
-    categories: string[];
+    categories: Category[]
     _id: string;
   }[];
 }) => {
@@ -40,8 +41,8 @@ const RelatedPosts = ({
         <span className="text-primary">Related</span> Posts
       </h2>
       {relatedPosts.map((post) => (
-        <div className="w-full my-4">
-          <Card>
+        <div key={post._id} className="w-full my-4">
+          <Card key={post._id}>
             <CardHeader>
               <div className="flex flex-col gap-4">
                 <CardTitle>{post.title}</CardTitle>
@@ -60,10 +61,11 @@ const RelatedPosts = ({
                 })}
               </p>
                 <div className="flex flex-wrap gap-2 mb-5">
-                  {post.categories.map((category: any) => {
+                  {post.categories.map((category: Category) => {
                     return (
+                      <div key={category._id}>
                       <Badge
-                        key={post._id}
+                      key={category._id}
                         className={`${
                           category.title === "Education"
                             ? "bg-green-700"
@@ -76,6 +78,7 @@ const RelatedPosts = ({
                       >
                         {category.title}
                       </Badge>
+                      </div>
                     );
                   })}
                 </div>

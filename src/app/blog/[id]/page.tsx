@@ -10,7 +10,7 @@ export const revalidate = 30;
 
 const BlogPage = async ({ params }: { params: { id: string } }) => {
   const EVENTS_QUERY = `*[_type == "blogpost" && slug.current == "${params.id}"]{
-    title, body[]{..., "asset": asset->url}, seo, publishedAt, description, 
+    title, _id, body[]{..., "asset": asset->url}, seo, publishedAt, description, 
     "image": mainImage.asset->url, readingTime, slug, featured, "categories": categories[]->{
       title, _id
     }
@@ -45,16 +45,13 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
   const categoryIds = events.categories.map((category: { _id: string }) => category._id);
 
   const sanitizedCategoryIds = categoryIds.map((id: string) => `"${id.replace(/"/g, '\\"')}"`).join(', ');
-  console.log(sanitizedCategoryIds);
   
   const sanitizedSlug = params.id.replace(/"/g, '\\"');
-
-  console.log(sanitizedSlug);
   
 
   const RELATED_POSTS_QUERY = `*[_type == "blogpost" && slug.current != "${sanitizedSlug}" && count(categories[_ref in [${sanitizedCategoryIds}]]) > 0] {
-    title, "image": mainImage.asset->url, slug, publishedAt, seo, "categories": categories[]->{
-    title
+    title, _id, "image": mainImage.asset->url, slug, publishedAt, seo, "categories": categories[]->{
+    title, _id
   } 
   }`;
 

@@ -1,6 +1,11 @@
 import { SanityDocument } from "next-sanity";
 
-export interface relatedPostTypes extends SanityDocument {
+export type Category = {
+    title: string,
+    _id: string
+}
+
+export type relatedPostTypes = {
     title: string,
     seo: {
         metaDescription: string
@@ -10,6 +15,6 @@ export interface relatedPostTypes extends SanityDocument {
         current: string
     },
     publishedAt: string,
-    categories: string[],
+    categories: Category[],
     _id: string
 }
