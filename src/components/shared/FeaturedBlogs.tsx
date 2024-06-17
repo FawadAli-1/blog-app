@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { ExternalLink } from "lucide-react";
 
-const EVENTS_QUERY = `*[_type == "blogpost"]{
+const EVENTS_QUERY = `*[_type == "blogpost"] | order(publishedAt asc){
   title, seo, publishedAt, description, 
   "image": mainImage.asset->url, readingTime, featured, slug, featured, "categories": categories[]->{
     title

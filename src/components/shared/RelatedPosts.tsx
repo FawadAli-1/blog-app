@@ -61,7 +61,7 @@ const RelatedPosts = ({
                 })}
               </p>
                 <div className="flex flex-wrap gap-2 mb-5">
-                  {post.categories.map((category: Category) => {
+                  {post.categories.map((category) => {
                     return (
                       <div key={category._id}>
                       <Badge
