@@ -28,10 +28,10 @@ const Navbar = () => {
   return (
     <section className="text-slate-900 dark:text-slate-200">
       <nav className="flex items-center justify-between sm:justify-center h-20">
-        <div className="flex items-center gap-2 font-semibold w-1/2 sm:w-full text-lg text-primary">
+        <div className="flex items-center gap-2 font-bold w-1/2 sm:w-full text-lg text-primary">
           <h1 className="text-xl">
-            Fawad{" "}
-            <span className="text-slate-900 dark:text-slate-200">Ali</span>
+          <span className="text-slate-900 dark:text-slate-100"> Become</span>
+            Better
           </h1>
         </div>
         <ul className="hidden sm:flex sm:justify-between sm:w-full sm:items-center ">

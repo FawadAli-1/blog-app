@@ -1,4 +1,5 @@
-import { SanityDocument } from "next-sanity";
+import { BlockChildrenObjectField } from '@sanity/types';
+
 
 export type Category = {
     title: string,
@@ -17,4 +18,15 @@ export type relatedPostTypes = {
     publishedAt: string,
     categories: Category[],
     _id: string
+}
+
+export type AuthorTypes = {
+    pfp: string,
+    body: any,
+    socialMedia: {
+        twitterx: string,
+        instagram: string,
+        github: string,
+        discord: string,
+    }
 }
