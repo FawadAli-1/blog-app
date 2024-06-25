@@ -2,13 +2,14 @@ import AllBlogs from "@/components/shared/AllBlogs";
 import FeaturedBlogs from "@/components/shared/FeaturedBlogs";
 import HeroSection from "@/components/shared/HeroSection";
 
-  export default function Home() {
+export const revalidate = 30;
 
+export default function Home() {
   return (
     <div>
-      <HeroSection/>
-      <FeaturedBlogs/>
-      <AllBlogs/>
+      <HeroSection />
+      <FeaturedBlogs />
+      <AllBlogs />
     </div>
   );
 }
