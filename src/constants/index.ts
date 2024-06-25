@@ -10,13 +10,8 @@ export const navigationPaths = [
         index: 2
     },
     {
-        pathname: "Projects",
-        route: "/projects",
-        index: 3
-    },
-    {
         pathname: "Newsletter",
         route: "/newsletter",
-        index: 4
+        index: 3
     },
 ]

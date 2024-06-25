@@ -41,7 +41,7 @@ const HeroSection = () => {
         </Button>
       </div>
       <div className="w-full mb-4 sm:w-1/2 flex items-center justify-center">
-        <Image src={philosopher} alt="image" width={600} />
+        <Image src={philosopher} alt="image" width={600} priority/>
       </div>
     </div>
   );
